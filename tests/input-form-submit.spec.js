@@ -1,5 +1,5 @@
 
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require('./test-fixtures');
 
 test('Scenario 3 - Input Form Submit', async ({ page }) => {
 

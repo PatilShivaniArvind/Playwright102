@@ -1,5 +1,5 @@
 
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require('./test-fixtures');
 
 test('Scenario 2 - Drag slider from 15 to 95', async ({ page }) => {
 
