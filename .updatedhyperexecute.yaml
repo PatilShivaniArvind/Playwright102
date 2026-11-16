@@ -1,0 +1,225 @@
+accessibilityJob: false
+alwaysRunPostSteps: false
+appium: null
+betaFeature:
+    setPartiallyCompletedAsCompleted: false
+cacheDirectories:
+    - node_modules
+cacheKey: '{{ checksum "package-lock.json" }}'
+captureScreenRecordingForScenarios: true
+codeDirectory: Playwright102
+collectLocalGitData: true
+combineTasksInMatrixMode: true
+concurrency: 2
+cypress: false
+differentialUpload:
+    enabled: false
+    forcedDisabled: false
+    ttlHours: null
+dynamicAllocation: false
+env:
+    BASE_URL: https://www.testmuai.com/selenium-playground/
+    DEMO_API_TOKEN: ${{.secrets.DEMO_API_TOKEN}}
+    TEST_EMAIL: playwright@example.com
+    TEST_ENV: hyperexecute
+    TEST_NAME: Playwright Certification Tester
+errorCategorizedOnFailureOnly: false
+framework:
+    additional_args: null
+    args:
+        appId: ""
+        appPath: ""
+        artifacts: false
+        autoGrantPermissions: false
+        avoidAppLaunch: false
+        customData: {}
+        darkMode: false
+        deviceSelectionStrategy: ""
+        devices: []
+        disableReleaseDevice: false
+        enableBluetooth: false
+        enableResultBundle: false
+        filters:
+            attributes: []
+        fixedIP: ""
+        isRealMobile: null
+        isVirtualDevice: false
+        language: ""
+        locale: ""
+        localhost: false
+        minorOsVersion: false
+        mitmProxy: false
+        mobileDC: null
+        networkHar: false
+        networkLogsOptions:
+            captureContent: false
+            excludeHosts: []
+            includeHosts: []
+        orientation: ""
+        otherApps: []
+        platformName: ""
+        playwrightRD: false
+        preservedDevice: false
+        queueTimeout: 0
+        shards:
+            mappings: []
+        skipInstall: false
+        skipUninstallPreviousBuild: false
+        skipXMLOnRun: false
+        smartUI: null
+        testRemarks: false
+        testSuiteAppId: ""
+        testSuitePath: ""
+        uninstallPreviousBuild: false
+        xcTestPlanId: ""
+        xcTestPlanPath: ""
+    baseCommand: ""
+    defaultReports: false
+    discoveryFlags: []
+    discoveryMode: ""
+    discoveryType: ""
+    downloadURL: ""
+    flags: []
+    isTestNGXMLSuite: false
+    licenseKey: ""
+    name: ""
+    runnerFlags: []
+    toscaArgs: null
+    userdefinediscovery: false
+    version: ""
+    workingDirectory: ""
+globalPost:
+    commands: []
+    completed: false
+    disableEmail: false
+    downloadArtifacts: false
+    email:
+        linkValidity: 0
+        metaInfo: []
+        templatePath: ""
+        to: []
+    mode: ""
+    runson: ""
+    shell: ""
+    workingDirectory: ""
+globalPre:
+    commands: []
+    completed: false
+    location: ""
+    maxRetries: 0
+    mode: ""
+    runson: ""
+    shell: ""
+    type: ""
+    workingDirectory: ""
+    yamlPath: null
+globalTimeout: 60
+jobID: 5cc1146f-19dc-421d-a836-e262c870d3a9
+jobLabel:
+    - playwright-102
+    - certification
+key: '********'
+localHTTPProxy: ""
+ltOptions: {}
+matrix:
+    os:
+        - win
+        - linux
+maxRetriesPreSteps: 0
+mergeArtifacts: true
+meta: {}
+onpremEnv: ""
+platformConfig: null
+post:
+    - echo "Playwright execution completed"
+postDirectives:
+    commands:
+        - echo "Playwright execution completed"
+    shell: ""
+    workingDirectory: ""
+pre:
+    - node --version
+    - npm ci
+    - npx playwright install chromium
+preDirectives:
+    commands:
+        - node --version
+        - npm ci
+        - npx playwright install chromium
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+project:
+    id: 01M7JKCGV5JPQWXY6QMD46GCRE
+    name: LambdaTest Default Project
+    type: custom
+projectpath: ""
+regionConfig:
+    storage:
+        enabled: false
+        name: ""
+        platform: azure
+        region: ""
+    vm: []
+runson: ${matrix.os}
+runtime:
+    language: node
+    version: "20"
+    addons: []
+    opts: {}
+slackChannel: ""
+sourcePayload:
+    verifySSL: true
+sprofilePath: ""
+storageType: ""
+testDiscoveryResultV3: []
+testSuiteStep: 60
+testSuiteTimeout: 60
+testSuites:
+    - npm test
+testType: playwright
+triggerMode: false
+triggerSource: CLI
+tunnelOpts:
+    testsPerTunnel: 10
+unzipPayload: false
+uploadArtefacts:
+    - email:
+        linkValidity: 0
+        metaInfo: []
+        to: []
+      name: Playwright-HTML-Report
+      path:
+        - playwright-report/**
+    - email:
+        linkValidity: 0
+        metaInfo: []
+        to: []
+      name: Playwright-Test-Results
+      path:
+        - test-results/**
+    - email:
+        linkValidity: 0
+        metaInfo: []
+        to: []
+      name: Playwright-Screenshots
+      path:
+        - screenshots/**
+    - email:
+        linkValidity: 0
+        metaInfo: []
+        to: []
+      name: Playwright-Videos
+      path:
+        - test-results/**/*.webm
+    - email:
+        linkValidity: 0
+        metaInfo: []
+        to: []
+      name: Playwright-Traces
+      path:
+        - test-results/**/*.zip
+user: shivaniarvindpatil
+version: "0.1"
+waitForArtefactsUpload: false
+whiteLabelProductTag: ""

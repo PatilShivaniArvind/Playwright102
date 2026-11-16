@@ -1,10 +1,10 @@
+
 const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: './tests',
 
   fullyParallel: true,
-
   workers: 3,
 
   reporter: [
@@ -13,20 +13,19 @@ module.exports = defineConfig({
   ],
 
   use: {
-    baseURL: 'https://www.testmuai.com',
-    headless: true,
-    screenshot: 'on',
-    video: 'on',
-    trace: 'on'
-  },
+  baseURL: 'https://www.testmuai.com',
+  headless: true,
+  screenshot: 'on',
+  video: 'on',
+  trace: 'on'
+},
 
   projects: [
     {
-  name: 'Chrome',
-  use: {
-    browserName: 'chromium',
-    channel: 'chrome'
-  }
-}
+      name: 'Chromium',
+      use: {
+        browserName: 'chromium'
+      }
+    }
   ]
 });

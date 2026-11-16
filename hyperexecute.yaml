@@ -1,6 +1,11 @@
 
 version: "0.1"
 
+runtime:
+  language: node
+  version: "20"
+
+
 runson: ${matrix.os}
 
 matrix:
@@ -15,12 +20,15 @@ testSuiteStep: 60
 
 env:
   TEST_ENV: "hyperexecute"
-  BASE_URL: "https://www.testmuai.com"
+  BASE_URL: "https://www.testmuai.com/selenium-playground/"
+  TEST_NAME: "Playwright Certification Tester"
+  TEST_EMAIL: "playwright@example.com"
   DEMO_API_TOKEN: ${{.secrets.DEMO_API_TOKEN}}
 
 pre:
-  - npm install
-  - npx playwright install chrome
+  - node --version
+  - npm ci
+  - npx playwright install chromium
 
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
@@ -32,18 +40,32 @@ testSuites:
 retryOnFailure: false
 
 mergeArtifacts: true
+captureScreenRecordingForScenarios: true
 
 uploadArtefacts:
   - name: Playwright-HTML-Report
     path:
       - playwright-report/**
+
   - name: Playwright-Test-Results
     path:
       - test-results/**
+
   - name: Playwright-Screenshots
     path:
       - screenshots/**
 
+  - name: Playwright-Videos
+    path:
+      - test-results/**/*.webm
+
+  - name: Playwright-Traces
+    path:
+      - test-results/**/*.zip
+
 post:
   - echo "Playwright execution completed"
 
+jobLabel:
+  - playwright-102
+  - certification
